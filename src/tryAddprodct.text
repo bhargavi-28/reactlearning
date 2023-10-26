@@ -1,0 +1,63 @@
+// import { Prouduct } from "./Prouduct";
+// import { PRO_LIST } from "./App";
+// import { useState } from "react";
+
+// export function Addproduct() {
+//   const productlist = PRO_LIST;
+//   // const [name, setname]= useState(productlist.name);
+//   // const [price, setprice]= useState(productlist.price);
+//   // const [poster, setposter]= useState(productlist.poster);
+//   // const [category, setcat]= useState(productlist.category);
+//   // const [rating, setrating]= useState(productlist.rating);
+//   // const [dicrip, setdiscrip]= useState(productlist.dicrip);
+//   const [addproduct, setproduct] = useState(productlist);
+
+//   return (
+//     <div>
+//       <div>
+//         <input
+//           type="text"
+//           placeholder="name"
+//           onChange={(event) => (setproduct(event.target.value))}
+//           value={addproduct.name} />
+//         <input
+//           type="text"
+//           placeholder="price"
+
+//           onChange={(event) => (setproduct(event.target.value))}
+//           value={addproduct.price} />
+//           <input
+//           type="text"
+//           placeholder="poster"
+
+//           onChange={(event) => (setproduct(event.target.value))}
+//           value={addproduct.poster} />
+//         <input
+//           type="text"
+//           placeholder="cat"
+//           onChange={(event) => (setproduct(event.target.value))}
+//           value={addproduct.category} />
+//         <input
+//           type="text"
+//           placeholder="rating"
+//           onChange={(event) => (setproduct(event.target.value))}
+//           value={addproduct.rating} />
+//         <input
+//           type="text"
+//           placeholder="discript"
+//           onChange={(event) => (setproduct(event.target.value))}
+//           value={productlist.discrip} />
+//         <button
+//           onClick={() => (
+//             setproduct([...productlist, addproduct])
+//           )}
+//         >
+//           add this product to the list
+//         </button>
+//       </div>
+//       {addproduct.map((item, index) => (
+//         <Prouduct product={item} id={index} />
+//       ))}
+//     </div>
+//   );
+// }
