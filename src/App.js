@@ -185,8 +185,10 @@ export default function App() {
 
 
 function Home() {
-  return <h1>welcome to product app</h1>
-}
+  return (
+  <><h1>welcome to product app</h1>
+  <h2>please click on the above toolbar button to navigate though the desired pages  </h2></>
+)}
 function NotFoundpage() {
   return (
     <>

@@ -4,7 +4,7 @@ export function Profilemembers() {
   const members = [
     {
       dp: "https://imgix.ranker.com/list_img_v2/18411/518411/original/my-top-10-favorite-anime-characters-u2",
-      n: "uzcumaki naruto"
+      n: "naruto"
     },
     {
       dp: "https://i.pinimg.com/1200x/3f/f3/84/3ff3847f6487e15456dcf52d2f3dcbfe.jpg",
