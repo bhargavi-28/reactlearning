@@ -275,3 +275,100 @@ export default function App() {
   {/* //jsx ends */ }
 }
 -------------------------------------------------------------
+
+------netify check----------------
+<Route path="/products" element={<ProductList product_list={product_list} setproList={setproList} />} />
+          <Route path="/colorBox" element={<Addcolor />} />
+          <Route path="/productAppMembers" element={<Profilemembers />} />
+          <Route path="/products/:id" element={<Productdetails product_list={product_list} setproList={setproList} />} />
+          {/* the above root path is for showing info of one product */}
+          <Route path="/products/add" element={<Addproducts product_list={product_list} setproList={setproList} />} />
+
+          {/* <Route path="*" element={<NotFoundpage />} /> 
+          the above doesnt show 404 in the url*/}
+          <Route path="/404" element={<NotFoundpage />} />
+          <Route path="*" element={<Navigate replace to="/404" />} />
+          {/* doing the above 2 lines will show 404 in the url */}
+
+
+          {/* <Route path= "/addproduct" element={<Addproduct/>}/> */}
+
+          {/* below lets learn redirecting routes => product name is changed to item according market treand
+        hence we redirect item to product list page */}
+          <Route path="/items" element={<Navigate replace to="/products" />} />
+
+          {/* or we can write <Route path="/items" element={<ProductList product_list={product_list} setproList={setproList} />} /> */}
+          {/* <Route path="/context" element={<ExampleContext/>} /> */}
+          <Route path="/reducer" element={<ReducerExample />} />
+          <Route path="/tictaktoe" element={<Tictaktoe />} />
+
+
+
+-----------------
+<div>
+          {/* <h1>Hello {name1}</h1>
+      <h2> {wel} Start !</h2> */}
+          {/* <Welcome n=" naruto" />
+      <Welcome n="itadori " />
+      <Welcome n="luffy " /> */}
+
+          {/* in the above lines we called welcome each times, 
+      instead we can use loop using map funtion */}
+          {/* ---------------------------------- */}
+          {/* { person.map((names) =>(
+      <Welcome n={names} />
+     ))} */}
+
+          {/* // compenent one over  */}
+
+
+          {/* <Profile
+        dp="https://imgix.ranker.com/list_img_v2/18411/518411/original/my-top-10-favorite-anime-characters-u2"
+        name="uzcumaki naruto"
+      />
+      <Profile
+        dp="https://i.pinimg.com/1200x/3f/f3/84/3ff3847f6487e15456dcf52d2f3dcbfe.jpg"
+        name="itadori yuji"
+      />
+      <Profile
+        dp="https://m.media-amazon.com/images/I/71azOmQbOYL.jpg"
+        name="luffy "
+      /> */}
+          {/* instead of above lines use looping by mapping */}
+
+          {/* {picture.map((pics)=>(
+        <Profile dp={pics.dp}
+        name={pics.name}/>
+      ))} */}
+          {/* <Buttonfun/> */}
+          {/* <Addcolor /> */}
+          {/* <ColorBoxs/> */}
+
+
+        </div >
+
+        -----nav----
+        <>
+          {/* <nav>
+         ------ navigation in the web page/app
+          -------we prefer <Link to> tag over <a> cuz it chamges the page without reloading or refresh
+          <ul>
+            <li>
+              <Link to="/">Home</Link> ------or  <a href="/">Home</a>
+            </li>
+            <li>
+              <Link to="/products">ProductList</Link>--------- or <a href="/products">ProductList</a>
+            </li>
+            <li>
+              <Link to="/colorBox">Addcolor</Link> ----or <a href="/colorBox">Addcolor</a>
+            </li>
+            <li>
+              <Link to="/productAppMembers">Profilemembers</Link> ----- or <a href="/productAppMembers">Profilemembers</a>
+            </li>
+            <li>
+
+              <Link to="/blabla">End</Link>
+            </li>
+           
+          </ul>
+        </nav> */}</>
