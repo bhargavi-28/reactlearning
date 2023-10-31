@@ -1,9 +1,15 @@
-import { Prouduct } from "./Prouduct";
 import { PRO_LIST } from "./App";
 import { useState } from "react";
 import TextField from '@mui/material/TextField';
+import { ProductList } from "./ProductList.1";
+import { Navigate, useNavigate } from "react-router-dom";
+import { Button } from "@mui/material";
+import CloudUploadIcon from '@mui/icons-material/CloudUpload';
+// here 2 aaction->
+// add new product
+// mapping the products from the existing list and new add - in second div
 
-export function ProductList({product_list,setproList}) {
+export function Addproducts({ product_list, setproList }) {
   // const product_list = PRO_LIST;
   //const [product_list, setproList] = useState(PRO_LIST) //lifted to parent from child hence commented
   const [name, setname] = useState("");
@@ -12,6 +18,7 @@ export function ProductList({product_list,setproList}) {
   const [category, setcat] = useState("");
   const [rating, setrating] = useState("");
   const [discrip, setdiscrip] = useState("");
+  const navigate = useNavigate();
   return (
     <div>
       {/* <TextField id="outlined-basic" label="name" variant="outlined" /> */}
@@ -21,7 +28,7 @@ export function ProductList({product_list,setproList}) {
           onChange={(event) => setname(event.target.value)}
           value={name}
         />
-        <TextField label="text" variant="outlined"
+        <TextField label="price" variant="outlined"
           onChange={(event) => setprice(event.target.value)}
           value={price}
         />
@@ -37,41 +44,44 @@ export function ProductList({product_list,setproList}) {
 
           onChange={(event) => setrating(event.target.value)}
           value={rating}
-        /> 
+        />
         <TextField label="dis" variant="outlined"
           onChange={(event) => (setdiscrip(event.target.value))}
           value={discrip}
         />
-
-        <button
-          onClick={() => {
-            const newpro = {
-              //  name:name,
-              //  price:price,
-              //  poster:poster,
-              //  category: cat,
-              //  rating:rating,
-              //  discrip:dicrip
-              //instead of above we can use object shorthand as both key value are same
-              name,
-              price,
-              poster,
-              category,
-              rating,
-              discrip
-            };
-            setproList([...product_list, newpro])
-          }}
-        >add product</button>
-
-
       </div>
-      <div className="list">
-        {product_list.map((itme, index) => (
-          <Prouduct key={index} product={itme} id={index} />
-        ))}
-      </div>
-    </div>
-  );
+      <Button component="label" variant="contained" startIcon={<CloudUploadIcon/>} 
+        onClick={() => {
+          const newpro = {
+            //  name:name,
+            //  price:price,
+            //  poster:poster,
+            //  category: cat,
+            //  rating:rating,
+            //  discrip:dicrip
+            //instead of above we can use object shorthand as both key value are same
+            name,
+            price,
+            poster,
+            category,
+            rating,
+            discrip
+          };
+          setproList([...product_list, newpro]);
+          navigate("/products")
+        }}
+        
+        
+        > add product
+        
+        </Button>
+
+
+    </div >
+
+    // {/* product mapping done in product list  component*/ } 
+    
+  )
 }
+
 
