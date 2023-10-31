@@ -91,7 +91,7 @@ export default function App() {
             <Button color="inherit" onClick={() => navigate("/")}>
               Home
             </Button>
-            {/* <Button color="inherit" onClick={() => navigate("/products")}>
+            <Button color="inherit" onClick={() => navigate("/products")}>
               ProductList
             </Button>
             <Button color="inherit" onClick={() => navigate("/products/add")}>
@@ -121,13 +121,29 @@ export default function App() {
               startIcon={mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}  // to change icon of dark to light theme 
               color="inherit" onClick={() => setmode(mode === "light" ? "dark" : "light")}>
               light mode
-            </Button> */}
+            </Button>
 
           </Toolbar>
         </AppBar>
         {/* nav  */}
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/products" element={<ProductList product_list={product_list} setproList={setproList} />} />
+          <Route path="/colorBox" element={<Addcolor />} />
+          <Route path="/productAppMembers" element={<Profilemembers />} />
+          <Route path="/products/:id" element={<Productdetails product_list={product_list} setproList={setproList} />} />
+          <Route path="/products/add" element={<Addproducts product_list={product_list} setproList={setproList} />} />
+
+          
+          <Route path="/404" element={<NotFoundpage />} />
+          <Route path="*" element={<Navigate replace to="/404" />} />
+          
+          <Route path="/items" element={<Navigate replace to="/products" />} />
+
+          {/* or we can write <Route path="/items" element={<ProductList product_list={product_list} setproList={setproList} />} /> */}
+          {/* <Route path="/context" element={<ExampleContext/>} /> */}
+          <Route path="/reducer" element={<ReducerExample />} />
+          <Route path="/tictaktoe" element={<Tictaktoe />} />
         </Routes>
       </div>
     </ThemeProvider>
